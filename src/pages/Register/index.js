@@ -24,7 +24,7 @@ export default function Register({ history }) {
       </div>
 
       <div className="panels-container">
-      <LeftPanel img={img} details={details}/>
+        <LeftPanel img={img} details={details}/>
       </div>
     </div>
   )

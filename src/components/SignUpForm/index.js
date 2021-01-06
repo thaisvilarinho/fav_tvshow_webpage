@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+import api from '../../services/api';
 
 
-export default function SignUpForm () {
+export default function SignUpForm ({ history }) {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    console.log('Registrar')
+  }
   
     return (
         <>
@@ -14,6 +25,8 @@ export default function SignUpForm () {
               <input 
                 type="email" 
                 placeholder="Informe seu e-mail" 
+                value={email}
+                onChange={event => setEmail(event.target.value)}
               />
             </div>
 
@@ -22,6 +35,8 @@ export default function SignUpForm () {
               <input 
               type="password" 
               placeholder="Informe sua senha" 
+              value={password}
+              onChange={event => setPassword(event.target.value)}
               />
             </div>
 
@@ -30,6 +45,8 @@ export default function SignUpForm () {
               <input 
               type="password" 
               placeholder="Confirme sua senha" 
+              value={confirmPassword}
+              onChange={event => setConfirmPassword(event.target.value)}
               />
             </div>
 
