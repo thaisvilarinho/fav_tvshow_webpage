@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles.css';
+
+import Shows from '../../components/Shows';
 
 export default function Home() {
 

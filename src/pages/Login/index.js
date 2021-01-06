@@ -1,51 +1,31 @@
-import React, { useState } from 'react';
-import api from '../../services/api';
-import logo from '../../assets/logo.png';
-import './styles.css';
+import React from 'react';
+
+import img from '../../assets/register.png';
+
+import SignInForm from '../../components/SignInForm';
+import LeftPanel from '../../components/LeftPanel';
+
 
 export default function Login({ history }) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  async function handleSubmit(event) {
-    event.preventDefault();
-
-    const response = await api.post('/login', { email, password });
-
-    const { id } = response.data;
-
-    localStorage.setItem('user', id);
-
-    history.push('/home');
+  const details = {
+    title: 'Novo por aqui ?',
+    text: 'Registre-se para acompanhar informações das suas séries de tv favoritas. É gratuito!',
+    textButton: 'Registrar',
+    to: '/register'
   }
+
 
   return (
     <div className="container">
-      <img src={logo} alt='logo'/>
-      <div>
-      <p id='errorMessage'> Email ou senha inválidos </p>
-        <form onSubmit={handleSubmit} className="content">
-          <div className='inputContent'>
-            <input 
-              id="email" 
-              type="email" 
-              placeholder="E-mail"
-              value={email}
-              onChange={event => setEmail(event.target.value)}
-            />
-          </div>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <SignInForm history={history} />
+        </div>
+      </div>
 
-          <div className='inputContent'>
-            <input 
-              id="password" 
-              type="password" 
-              placeholder="Senha"
-              value={password}
-              onChange={event => setPassword(event.target.value)}
-            />
-          </div>
-          <button className="btn" type="submit">Entrar</button>
-        </form>
+      <div className="panels-container">
+        <LeftPanel img={img} details={details}/>
       </div>
     </div>
   )
