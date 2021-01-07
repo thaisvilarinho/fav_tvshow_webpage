@@ -26,7 +26,7 @@ export default function SignInForm ({ history }) {
                 <h2 className="title">Logar</h2>
 
                 <div className="input-field">
-                    <i className="fas fa-user"></i>
+                    <i className="fas fa-user" />
                     <input 
                         type="email" 
                         placeholder="E-mail" 
@@ -36,7 +36,7 @@ export default function SignInForm ({ history }) {
                 </div>
 
                 <div className="input-field">
-                    <i className="fas fa-lock"></i>
+                    <i className="fas fa-lock" />
                     <input 
                         type="password" 
                         placeholder="Informe sua senha" 

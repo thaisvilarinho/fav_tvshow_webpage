@@ -8,7 +8,6 @@ const Navbar = () => {
 
   const [clicked, setClicked] = useState(false);
 
-
   return (
     <nav className='navbar-items'>
       <div className="left-content">
@@ -21,8 +20,8 @@ const Navbar = () => {
         </div>
       </div>
 
-        <div className="logo-content">
-          <h1 className='navbar-logo'>TVMAZEAPI<i className='fas fa-tv' /></h1>
+        <div>
+          <h1 className='navbar-logo'><span>TVMAZEAPI</span><i className='fas fa-tv' /></h1>
           <div className="menu-icon" onClick={() => setClicked(!clicked)}> 
             <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
           </div>
@@ -41,6 +40,7 @@ const Navbar = () => {
         }
       </ul>
     </nav>
+
   );
 }
 
