@@ -10,7 +10,7 @@
     margin: 0px 0px 0px 30px;
 }
 
-.showsRow-listarea {
+.showsRow-content {
     overflow-x: hidden;
     padding-left: 30px;
 }
@@ -34,7 +34,12 @@
 .showsRow-item img:hover {
     transform: scale(1);
 }
-.showsRow-navigation-left, .showsRow-navigation-right {
+
+.fa-chevron-left, .fa-chevron-right {
+    font-size: 30px;
+    color:#fff
+}
+.arrow-navigation-left, .arrow-navigation-right {
     position: absolute;
     width: 40px;
     height: 225px;
@@ -49,16 +54,15 @@
     transition: all ease 0.5s;
 }
 
-.showsRow-navigation-left {
+.arrow-navigation-left {
     left: 0;
 }
 
-.showsRow-navigation-right {
+.arrow-navigation-right {
     right: 0;
 }
 
-.showsRow:hover .showsRow-navigation-left,
-.showsRow:hover .showsRow-navigation-right {
+.showsRow:hover .arrow-navigation-left,
+.showsRow:hover .arrow-navigation-right {
     opacity: 1;
-
 }

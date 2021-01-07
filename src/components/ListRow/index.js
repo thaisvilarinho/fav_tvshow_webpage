@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import './styles.css';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 
-export default ({ title, list })=>{
+export default function ListRow({ title, list }){
 
     const [scrollX, setScrollX] = useState(0);
 
@@ -19,9 +17,9 @@ export default ({ title, list })=>{
     const handleRightArrow = () =>{
 
         let valueScrollRight = scrollX - Math.round(window.innerWidth / 2); 
-        let ListWidth = list.length * 150;
-        if ((window.innerWidth - ListWidth) > valueScrollRight) {
-            valueScrollRight = (window.innerWidth - ListWidth) - 60;
+        let widthListShows = list.length * 150;
+        if ((window.innerWidth - widthListShows) > valueScrollRight) {
+            valueScrollRight = (window.innerWidth - widthListShows) - 60;
         }
         setScrollX(valueScrollRight);
     }
@@ -35,12 +33,12 @@ export default ({ title, list })=>{
                 list.length > 10 || window.innerWidth < 730 ? 
 
                 <>
-                    <div className="showsRow-navigation-left" onClick={handleLeftArrow}>
-                        <NavigateBeforeIcon style={{fontSize: 50, color:'#fff'}} />
+                    <div className="arrow-navigation-left" onClick={handleLeftArrow}>
+                        <i className="fas fa-chevron-left"></i>
                     </div>
 
-                    <div className="showsRow-navigation-right" onClick={handleRightArrow}>
-                        <NavigateNextIcon style={{fontSize: 50, color:'#fff'}} />
+                    <div className="arrow-navigation-right" onClick={handleRightArrow}>
+                        <i className="fas fa-chevron-right"></i>
                     </div>
 
                 </>
@@ -48,7 +46,7 @@ export default ({ title, list })=>{
                 <>
                 </>
             }
-                <div className="showsRow-listarea">
+                <div className="showsRow-content">
                     <div className="showsRow-list" style={{
                         marginLeft: scrollX,
                         width: list.length * 150

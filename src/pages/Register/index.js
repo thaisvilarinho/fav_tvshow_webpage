@@ -17,13 +17,13 @@ export default function Register({ history }) {
 
   return (
     <div className="container">
-      <div className="forms-container">
-        <div className="signin-signup">
+      <div className="forms-content">
+        <div className="signs-forms">
           <SignUpForm history={history} />
         </div>
       </div>
 
-      <div className="panels-container">
+      <div className="panels-content">
         <LeftPanel img={img} details={details}/>
       </div>
     </div>

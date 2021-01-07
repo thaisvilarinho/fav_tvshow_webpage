@@ -28,7 +28,7 @@ export default function SignInForm ({ history }) {
                 <div className="input-field">
                     <i className="fas fa-user"></i>
                     <input 
-                        className="text" 
+                        type="email" 
                         placeholder="E-mail" 
                         value={email}
                         onChange={event => setEmail(event.target.value)}
