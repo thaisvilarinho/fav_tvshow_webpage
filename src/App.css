@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
 
 * {
   margin: 0;
@@ -17,8 +17,29 @@ body {
 }
 
 body, input, button {
-  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 14px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -195,6 +216,12 @@ form.sign-form {
   font-size: 0.8rem;
 }
 
+footer {
+  margin: 50px 0;
+  color: #fff;
+  text-align: center;
+}
+
 /* ANIMAÇÃO PAINEL E FORMULÁRIOS DO LOGIN E REGISTER */
 
 .container.left-panel .image,
@@ -318,7 +345,8 @@ form.sign-form {
     bottom: 72%;
     left: 50%;
   }
-
 }
+
+
 
 

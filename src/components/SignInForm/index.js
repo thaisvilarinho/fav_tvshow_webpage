@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import api from '../../services/api';
+import apiUserFav from '../../services/apiUserFav';
 
 export default function SignInForm ({ history }) {
 
@@ -10,7 +10,7 @@ export default function SignInForm ({ history }) {
     async function handleSubmit(event) {
       event.preventDefault();
   
-      const response = await api.post('/login', { email, password });
+      const response = await apiUserFav.post('/login', { email, password });
   
       const { id } = response.data;
   

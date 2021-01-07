@@ -15,7 +15,6 @@ export default function Login({ history }) {
     to: '/register'
   }
 
-
   return (
     <div className="container">
       <div className="forms-container">

@@ -1,0 +1,64 @@
+.title {
+    font-size: 1.8em;
+}
+
+.showsRow {
+    margin-bottom: 30px;
+}
+
+.showsRow h2 {
+    margin: 0px 0px 0px 30px;
+}
+
+.showsRow-listarea {
+    overflow-x: hidden;
+    padding-left: 30px;
+}
+
+.showsRow-list {
+    transition: all ease 0.3s;
+}
+
+.showsRow-item {
+    display: inline-block;
+    width: 150px;
+    cursor: pointer;
+}
+
+.showsRow-item img {
+    width: 100%;
+    transform: scale(0.9);
+    transition: all ease 0.2s;
+}
+
+.showsRow-item img:hover {
+    transform: scale(1);
+}
+.showsRow-navigation-left, .showsRow-navigation-right {
+    position: absolute;
+    width: 40px;
+    height: 225px;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    opacity: 0;
+    transition: all ease 0.5s;
+}
+
+.showsRow-navigation-left {
+    left: 0;
+}
+
+.showsRow-navigation-right {
+    right: 0;
+}
+
+.showsRow:hover .showsRow-navigation-left,
+.showsRow:hover .showsRow-navigation-right {
+    opacity: 1;
+
+}

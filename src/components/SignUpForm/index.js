@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import api from '../../services/api';
+//import apiUserFav from '../../services/apiUserFav';
 
 
 export default function SignUpForm ({ history }) {
@@ -9,10 +9,10 @@ export default function SignUpForm ({ history }) {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  async function handleSubmit(event) {
+  /*async function handleSubmit(event) {
     event.preventDefault();
     console.log('Registrar')
-  }
+  }*/
   
     return (
         <>
