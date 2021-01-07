@@ -10,8 +10,12 @@
 .navbar-logo {
     color: #fff;
     justify-self: start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 20px;
     cursor: pointer;
+    flex-wrap: nowrap;
 }
 
 .fa-tv {
@@ -20,36 +24,65 @@
 }
 
 .left-content {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100vw;
 }
 
-.input-wrapper {  
+.search-input{
+    background: #191919;
+    max-width: 380px;
+    width: 100%;
+    height: 40px;
     display: flex;
+    align-items: center;
+    border-radius: 40px;
+    padding: 20px; 
+    margin-right: 0.8rem;
+    margin-left: 0.8rem;
+}
+
+.fa-search {
+    font-size: 20px;
+}
+
+.search-btn {
+    border: none;
+    color: #cf112b;
+    float: right;
+    height: 40px;
+    border-bottom-right-radius: 30%;
+    border-top-right-radius: 30%;
+    background: #fff;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 180px;
 }
 
-.input-content {
-    min-width: 300px;
-    width: 20vw;
-    padding: 13px;
+.search-txt {
     border: none;
-    border-radius: 8px;
+    background: none;
+    outline: none;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    align-items: center;
+    transition: 0.4s;
+    width: 20vw;
 }
 
 .nav-menu {
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(3, auto);
     grid-gap: 10px;
     list-style: none;
     text-align: center;
     width: 70vw;
     justify-content: end;
-    margin-right: 2rem;
+    margin-right: 4rem;
 } 
 
 .nav-links {
@@ -64,7 +97,7 @@
     transition: all ease-out 0.2s;
 }
 
-.fa-bars, .fa-search {
+.fa-bars {
     color: #fff;
 }
 
@@ -128,5 +161,4 @@
         color: #fff;
         font-size: 2rem;
     }
-
 }

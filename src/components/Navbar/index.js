@@ -12,15 +12,21 @@ const Navbar = () => {
   return (
     <nav className='navbar-items'>
       <div className="left-content">
-      <h1 className='navbar-logo'>TVMAZEAPI<i className='fas fa-tv'></i></h1>
-      <div className="menu-icon" onClick={() => setClicked(!clicked)}> 
-          <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+
+      <div className="search-input">
+          <input className="search-txt" type="text" placeholder="Procurar..." />
+          <button to="/home" className="search-btn">
+            <i className="fas fa-search" />
+          </button>
+        </div>
       </div>
-      <div className="input-wrapper">
-        <input className="input-content"type="text" placeholder='Procure por uma série' />
-        <button><i className="fas fa-search"></i></button>
-      </div>
-      </div>
+
+        <div className="logo-content">
+          <h1 className='navbar-logo'>TVMAZEAPI<i className='fas fa-tv' /></h1>
+          <div className="menu-icon" onClick={() => setClicked(!clicked)}> 
+            <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+          </div>
+        </div>
       <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
         {
           MenuItems.map((item, index)=>{
