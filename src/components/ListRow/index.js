@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './styles.css';
 
-export default function ListRow({ title, list }){
+import NoImage from '../../image/no-image.jpg';
+
+export default function ListRow({ title, list, isFavorite }){
 
     const [scrollX, setScrollX] = useState(0);
 
@@ -51,12 +53,23 @@ export default function ListRow({ title, list }){
                         marginLeft: scrollX,
                         width: list.length * 150
                         }}>
-                        {list.length > 0 && list.map((show, id)=>{
-                        let image = show.image.medium;
-                        let showName = show.name
+                        {list.length > 0 && list.map((show, key)=>{
+                        let { image, name, id } = show;
                         return (
-                            <div key={id} className='showsRow-item'>
-                                <img src={image} alt={showName}/>
+                            <div key={key} className='showsRow-item'>
+                                <img src={image ? image.medium : NoImage} alt={name}/>
+                                <i 
+                                    className={isFavorite.includes(id) ? "fas fa-heart" : "far fa-heart" } 
+                                    style={{
+                                        color:`${isFavorite.includes(id) ? '#cf112b' : "#fff"}`, 
+                                        fontSize:30, 
+                                        position:'absolute', 
+                                        marginTop: 150, 
+                                        marginLeft: -60,
+                                        backgroundColor: 'rgba(0, 0, 0, 0.35)',
+                                        padding: 10,
+                                        borderRadius: 8 }}>
+                                </i>     
                             </div>
                         )
                             })}

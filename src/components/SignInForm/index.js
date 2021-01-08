@@ -11,12 +11,16 @@ export default function SignInForm ({ history }) {
       event.preventDefault();
   
       const response = await apiUserFav.post('/login', { email, password });
-  
+
+      if (response){
       const { id } = response.data;
   
       localStorage.setItem('user', id);
   
       history.push('/home');
+      }
+
+      
     }
 
     return (

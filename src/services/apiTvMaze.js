@@ -22,7 +22,7 @@ const FullGenresList = async (list)=>{
 };
 
 
-const ShowsByGenre = async ()=>{   
+export const ShowsByGenre = async ()=>{   
 
   const allShowsByGenre = [];
   const allShows = await apiTvMaze.get('/shows');
@@ -38,10 +38,11 @@ const ShowsByGenre = async ()=>{
         }
       })  
     }
-    allShowsByGenre.push(objetoShowByGenre)
+    return allShowsByGenre.push(objetoShowByGenre)
   })
 
     return allShowsByGenre
 };
 
-export default ShowsByGenre;
+
+export default apiTvMaze;
