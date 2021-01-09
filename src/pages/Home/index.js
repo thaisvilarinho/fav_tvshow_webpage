@@ -20,7 +20,7 @@ export default function Home() {
     getIsFavorite();
     async function getShowsByGenre(){
       const response = await ShowsByGenre();
-      if (response && loadIsFavorite){
+      if (response){
         setListShowsByGenre(response);
       }
     }
@@ -37,7 +37,7 @@ export default function Home() {
         const idFavoritedShows = []
         data.filter((item)=>{
           let showId = item.idShow
-          idFavoritedShows.push(showId)
+          return idFavoritedShows.push(showId)
       })
       setLoadIsFavorite(idFavoritedShows)
       }
@@ -45,7 +45,7 @@ export default function Home() {
 
 
   async function handleRequest(){
-    const response = await (await apiTvMaze.get(`/search/shows?q=${searchShow}`));
+    const response = await apiTvMaze.get(`/search/shows?q=${searchShow}`);
     const { data } = response;
 
     if (data && searchShow && loadIsFavorite){
@@ -67,7 +67,6 @@ export default function Home() {
         <div className="search-box">
           <input 
             type="text" 
-            autoCorrect={false}
             autoCapitalize='none'
             className="input" 
             placeholder="Encontre sua série favorita"

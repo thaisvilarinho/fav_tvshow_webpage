@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './styles.css';
 
+import { Link } from 'react-router-dom';
+
 import NoImage from '../../image/no-image.jpg';
 
 export default function ListRow({ title, list, isFavorite }){
@@ -32,7 +34,7 @@ export default function ListRow({ title, list, isFavorite }){
             <h2 className='title'>{title}</h2>
 
             {
-                list.length > 10 || window.innerWidth < 730 ? 
+                list.length > 5 || window.innerWidth < 730 ? 
 
                 <>
                     <div className="arrow-navigation-left" onClick={handleLeftArrow}>
@@ -55,22 +57,32 @@ export default function ListRow({ title, list, isFavorite }){
                         }}>
                         {list.length > 0 && list.map((show, key)=>{
                         let { image, name, id } = show;
+
                         return (
-                            <div key={key} className='showsRow-item'>
-                                <img src={image ? image.medium : NoImage} alt={name}/>
-                                <i 
-                                    className={isFavorite.includes(id) ? "fas fa-heart" : "far fa-heart" } 
-                                    style={{
-                                        color:`${isFavorite.includes(id) ? '#cf112b' : "#fff"}`, 
-                                        fontSize:30, 
-                                        position:'absolute', 
-                                        marginTop: 150, 
-                                        marginLeft: -60,
-                                        backgroundColor: 'rgba(0, 0, 0, 0.35)',
-                                        padding: 10,
-                                        borderRadius: 8 }}>
-                                </i>     
-                            </div>
+                            <Link to={{
+                            pathname: '/details',
+                            state: { 
+                                showData: show,
+                                favoriteArray: isFavorite,
+                             }
+                            }} key={key}                            
+                            >
+                                <div key={key} className='showsRow-item'>
+                                    <img src={image ? image.medium : NoImage} alt={name}/>
+                                    <i 
+                                        className={isFavorite.includes(id) ? "fas fa-heart" : "far fa-heart" } 
+                                        style={{
+                                            color:`${isFavorite.includes(id) ? '#cf112b' : "#fff"}`, 
+                                            fontSize:30, 
+                                            position:'absolute', 
+                                            marginTop: 150, 
+                                            marginLeft: -60,
+                                            backgroundColor: 'rgba(0, 0, 0, 0.35)',
+                                            padding: 10,
+                                            borderRadius: 8 }}>
+                                    </i>     
+                                </div>
+                            </Link>
                         )
                             })}
                     </div>
